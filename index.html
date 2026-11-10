@@ -5,69 +5,191 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hisantara SMP | Official Website</title>
+
 <style>
-* { box-sizing: border-box; }
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #101010;
+  background: #0c0c0c;
   color: white;
 }
+
 header {
-  padding: 22px;
+  background: #151515;
+  padding: 22px 15px;
   text-align: center;
-  background: #171717;
   border-bottom: 2px solid #c99b32;
 }
-header h1 { color: #e6b943; margin: 0; }
-nav { margin-top: 15px; }
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+
+header h1 {
+  color: #e6b943;
+  letter-spacing: 3px;
 }
+
+nav {
+  margin-top: 16px;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 9px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #e6b943;
+}
+
 .hero {
   text-align: center;
-  padding: 85px 20px;
-  background: linear-gradient(135deg,#252016,#101010);
+  padding: 90px 20px;
+  background: linear-gradient(140deg,#302513,#101010 70%);
 }
-.hero h2 { font-size: 38px; color: #e6b943; }
-.hero p { color: #ccc; }
+
+.hero h2 {
+  font-size: clamp(30px,7vw,48px);
+  color: #e6b943;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
 .btn {
   display: inline-block;
+  margin-top: 25px;
+  padding: 13px 25px;
   background: #c99b32;
   color: #111;
-  padding: 12px 22px;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 15px;
 }
-section { padding: 45px 20px; text-align: center; }
-section h2 { color: #e6b943; }
+
+section {
+  padding: 55px 18px;
+  text-align: center;
+}
+
+section h2 {
+  color: #e6b943;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
 .ranks {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-  gap: 15px;
-  max-width: 850px;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 18px;
+  max-width: 1050px;
   margin: auto;
 }
+
 .rank {
-  background: #202020;
-  border: 1px solid #826522;
-  border-radius: 10px;
-  padding: 22px 10px;
+  background: #191919;
+  border: 1px solid #715923;
+  border-radius: 12px;
+  padding: 25px 18px;
+  text-align: left;
+  transition: .2s;
 }
-.rank h3 { color: #e6b943; }
-.rank p { color: #bbb; font-size: 14px; }
+
+.rank:hover {
+  border-color: #e6b943;
+  transform: translateY(-3px);
+}
+
+.rank h3 {
+  color: #e6b943;
+  font-size: 23px;
+  margin-bottom: 9px;
+}
+
+.rank .specialty {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.rank p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+details {
+  margin-top: 18px;
+  border-top: 1px solid #444;
+  padding-top: 14px;
+}
+
+summary {
+  color: #e6b943;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.detail {
+  padding-top: 15px;
+}
+
+.detail h4 {
+  color: #e6b943;
+  margin: 12px 0 6px;
+}
+
+.detail ul {
+  padding-left: 20px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.hunter {
+  border-color: #a83b3b;
+  background: linear-gradient(145deg,#291313,#191919);
+}
+
+.hunter h3 {
+  color: #e66b6b;
+}
+
+.hunter summary {
+  color: #e66b6b;
+}
+
+#about p, #join p {
+  color: #ccc;
+  line-height: 1.9;
+}
+
 footer {
+  background: #151515;
+  border-top: 1px solid #70551e;
+  padding: 25px 15px;
   text-align: center;
-  padding: 22px;
-  background: #171717;
-  color: #999;
+  color: #888;
+  font-size: 13px;
 }
+
 </style>
 </head>
+
 <body>
 
 <header>
@@ -91,29 +213,194 @@ footer {
   <h2>ABOUT HISANTARA</h2>
   <p>Selamat datang di Hisantara SMP!</p>
   <p>Bangun dunia, temukan teman, dan ciptakan petualanganmu sendiri.</p>
+  <p>One Community, One Adventure.</p>
 </section>
 
 <section id="rank">
-  <h2>OUR RANKS</h2>
+  <h2>RANK INFORMATION</h2>
+  <p class="subtitle">
+    Kenali fasilitas, ability, dan kit dari setiap rank Hisantara.
+  </p>
+
   <div class="ranks">
-    <div class="rank"><h3>NOOB</h3><p>Default Rank</p></div>
-    <div class="rank"><h3>MEMBER</h3><p>Basic Rank</p></div>
-    <div class="rank"><h3>GUARDIAN</h3><p>Premium Rank</p></div>
-    <div class="rank"><h3>KING</h3><p>Premium Rank</p></div>
-    <div class="rank"><h3>QUEEN</h3><p>Premium Rank</p></div>
-    <div class="rank"><h3>GOD</h3><p>Premium Rank</p></div>
-    <div class="rank"><h3>HUNTER</h3><p>Special Rank — 5 Selected Players</p></div>
+
+    <div class="rank">
+      <h3>NOOB</h3>
+      <p class="specialty">Default Rank</p>
+      <p>Rank awal yang diberikan kepada setiap pemain baru.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>Fasilitas dasar pemain.</li>
+          </ul>
+          <h4>Kit</h4>
+          <ul>
+            <li>Belum tersedia.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank">
+      <h3>MEMBER</h3>
+      <p class="specialty">Basic Member</p>
+      <p>Rank keanggotaan untuk pemain Hisantara.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>Fasilitas dasar pemain.</li>
+          </ul>
+          <h4>Kit</h4>
+          <ul>
+            <li>Belum tersedia.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank">
+      <h3>GUARDIAN</h3>
+      <p class="specialty">Protection Specialist</p>
+      <p>Spesialis perlindungan dan pemulihan pemain.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>/heal dengan cooldown.</li>
+            <li>/feed dengan cooldown.</li>
+          </ul>
+          <h4>Hadiah Awal</h4>
+          <ul>
+            <li>2.000 Coins.</li>
+          </ul>
+          <h4>Guardian Kit</h4>
+          <ul>
+            <li>Iron Armor.</li>
+            <li>Shield.</li>
+            <li>Golden Apple.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank">
+      <h3>KING</h3>
+      <p class="specialty">Wealth & Convenience</p>
+      <p>Spesialis kekayaan dan kemudahan dalam bertahan hidup.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>/enderchest.</li>
+            <li>/workbench.</li>
+          </ul>
+          <h4>Hadiah Awal</h4>
+          <ul>
+            <li>5.000 Coins.</li>
+          </ul>
+          <h4>King Kit</h4>
+          <ul>
+            <li>Diamond Pickaxe.</li>
+            <li>Golden Apple.</li>
+            <li>Emerald.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank">
+      <h3>QUEEN</h3>
+      <p class="specialty">Crafting & Enchantment</p>
+      <p>Spesialis crafting dan pengembangan perlengkapan.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>/workbench.</li>
+            <li>/enderchest.</li>
+          </ul>
+          <h4>Hadiah Awal</h4>
+          <ul>
+            <li>5.000 Coins.</li>
+          </ul>
+          <h4>Queen Kit</h4>
+          <ul>
+            <li>Enchanting Table.</li>
+            <li>Lapis Lazuli.</li>
+            <li>Buku Enchantment.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank">
+      <h3>GOD</h3>
+      <p class="specialty">Ultimate Convenience</p>
+      <p>Spesialis fasilitas dan kenyamanan tingkat tinggi.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Ability</h4>
+          <ul>
+            <li>/fly di area yang diizinkan.</li>
+            <li>/heal.</li>
+            <li>/feed.</li>
+          </ul>
+          <h4>Hadiah Awal</h4>
+          <ul>
+            <li>10.000 Coins.</li>
+          </ul>
+          <h4>God Kit</h4>
+          <ul>
+            <li>Diamond Armor.</li>
+            <li>Enchanted Tools.</li>
+            <li>Golden Apple.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="rank hunter">
+      <h3>HUNTER</h3>
+      <p class="specialty">Special Selected Rank</p>
+      <p>Gelar khusus yang hanya diberikan kepada 5 pemain pilihan.</p>
+      <details>
+        <summary>LIHAT DETAIL</summary>
+        <div class="detail">
+          <h4>Status</h4>
+          <ul>
+            <li>Hanya 5 pemain terpilih.</li>
+            <li>Tidak diperjualbelikan.</li>
+            <li>Special Hunter Kit.</li>
+          </ul>
+          <p style="margin-top:12px;color:#e66b6b;">
+            A special title. Earned, not purchased.
+          </p>
+        </div>
+      </details>
+    </div>
+
   </div>
 </section>
 
 <section id="join">
   <h2>JOIN HISANTARA</h2>
   <p>Java & Bedrock players are welcome!</p>
-  <p>Server IP: Coming Soon</p>
+  <p>informasi tentang rank: +62 858-7204-3323</p>
+  <p>Adventure starts with you.</p>
 </section>
 
 <footer>
   © 2026 HISANTARA SMP. All Rights Reserved.
+  <br><br>
+  Official Hisantara SMP Website
 </footer>
 
 </body>
